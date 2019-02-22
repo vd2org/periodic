@@ -18,13 +18,16 @@ class Periodic:
         self._task = None
         self._handler = None
 
-    async def start(self, immediately=False):
+    async def start(self, delay=None):
+        if delay is None:
+            delay = self.interval
+
         if self.is_started:
             return
 
         self.is_started = True
         self._is_running = False
-        if immediately:
+        if delay == 0:
             self._handler = self._loop.call_soon(self._run)
         else:
             self._handler = self._loop.call_later(self.interval, self._run)
