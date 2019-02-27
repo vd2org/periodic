@@ -18,7 +18,17 @@ class Periodic:
         self._task = None
         self._handler = None
 
-    async def start(self, delay=None):
+    async def start(self, delay: float = None):
+        """Starts periodic.
+
+        If `delay` is None(default) task will be called after selected interval,
+        if 0, task will be called immediately, otherwise task will be called after
+        `delay` seconds.
+
+        :param delay: Delay for the first run of task in seconds. Default is None.
+        :return: None
+        """
+
         if delay is None:
             delay = self.interval
 
@@ -30,7 +40,7 @@ class Periodic:
         if delay == 0:
             self._handler = self._loop.call_soon(self._run)
         else:
-            self._handler = self._loop.call_later(self.interval, self._run)
+            self._handler = self._loop.call_later(delay, self._run)
 
     async def stop(self):
         if not self.is_started:
