@@ -8,7 +8,7 @@ from os.path import join, dirname
 import periodic
 
 setup(
-    name='py-enigma',
+    name='periodic',
     version=periodic.version,
     author='Vd',
     author_email='vd@vd2.org',
