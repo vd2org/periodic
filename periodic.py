@@ -29,14 +29,17 @@ class Periodic:
         :return: None
         """
 
-        if delay is None:
-            delay = self.interval
-
         if self.is_started:
             return
 
+        if delay is None:
+            delay = self.interval
+
         self.is_started = True
         self._is_running = False
+
+        if delay is None:
+            delay = self.interval
         if delay == 0:
             self._handler = self._loop.call_soon(self._run)
         else:
