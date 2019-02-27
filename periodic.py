@@ -66,7 +66,7 @@ class Periodic:
         try:
             with suppress(asyncio.CancelledError):
                 await self.coro(*self.args, **self.kwargs)
-        except:
+        except:  # catching all exceptions
             logger.exception('Got exception during awaiting periodically')
         finally:
             self._is_running = False
