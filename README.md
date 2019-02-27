@@ -20,6 +20,8 @@ from periodic import Periodic
 
 async def periodically(param):
     print(datetime.now(), 'Yay!', param)
+    await asyncio.sleep(1)
+    print(datetime.now(), 'Done!')
     
 async def main():
     p = Periodic(3, periodically, 'Periodically!')
