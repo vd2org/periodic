@@ -2,14 +2,16 @@
 # This file is part of Periodic package.
 # Periodic is released under the MIT License (see LICENSE).
 
-from distutils.core import setup
+
 from os.path import join, dirname
+
+import setuptools
 
 import periodic
 
-setup(
-    name='periodic',
-    version=periodic.version,
+setuptools.setup(
+    name='asyncio-periodic',
+    version=periodic.version(),
     author='Vd',
     author_email='vd@vd2.org',
     url='https://github.com/vd2org/periodic',
@@ -17,8 +19,8 @@ setup(
     description='Simple tool for run asyncio tasks periodically.',
     long_description=open(join(dirname(__file__), 'README.md')).read(),
     packages=['periodic'],
-    package_data=dict(periodic=['periodic/*.py',]),
-    classifiers = [
+    package_data=dict(periodic=['periodic/*.py', ]),
+    classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Framework :: AsyncIO',
         'Intended Audience :: Developers',
