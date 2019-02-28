@@ -19,7 +19,6 @@ setuptools.setup(
     description='Simple tool for run asyncio tasks periodically.',
     long_description=open(join(dirname(__file__), 'README.md')).read(),
     packages=['periodic'],
-    package_data=dict(periodic=['periodic/*.py', ]),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Framework :: AsyncIO',
