@@ -32,3 +32,15 @@ if __name__ == "__main__":
     loop.create_task(main())
     loop.run_forever()
 ```
+
+# Testing
+
+Code tested automatically using travis.
+You can see build status here: https://travis-ci.com/vd2org/periodic
+
+To test code manually install and run pytest:
+
+```bash
+pip install pytest
+python -m pytest tests/
+```
