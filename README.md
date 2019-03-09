@@ -35,8 +35,7 @@ if __name__ == "__main__":
 
 # Testing
 
-Code tested automatically using travis.
-You can see build status here: https://travis-ci.com/vd2org/periodic
+Code tested automatically using travis. You can see build status **[here](https://travis-ci.com/vd2org/periodic)**.
 
 To test code manually install and run pytest:
 
